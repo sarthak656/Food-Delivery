@@ -1,0 +1,62 @@
+1)React.createElement gives React Element  which is a javascript object,it rendered to DOM as html Element.
+
+2)JSX-it is html like syntax
+3)React and JSX are both different
+4)Javascript can understand only ECMAScipts they cannot understand JSX code,but parcel(manager-it 5)5)alone cannot do,it gives this job to babel((babel is a normal js package ,it is like minister gives work officers)) will transpiles before it reaches the Javascript engine that js engine understands.
+
+6)babel converts JSX code -> React.createElement 
+7)JSX => Babel transpiles it to React.createElement => ReactElement - JS Objct => HTMLElement(render)
+
+8)Babel actually a open source JS compiler
+
+
+///React Component
+1)class based components  ->old way
+2)functional based components  -> new way
+ 
+React funtional Component is a normal javascript funtional Component
+a function that retuns piece of jsx is funtional Component.
+
+
+
+import React from 'react';    
+ import ReactDOM from 'react-dom/client';
+
+  //JSX-it is html like syntax 
+  const jsxheading = (<h1 className='head'>sarthak</h1>) ;  //React Element
+  console.log(jsxheading);
+
+
+    const HeadingComponent = () => (    //React Functional component
+         <div id="container">
+       <h1>Welcome</h1>
+       </div>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<HeadingComponent />);   //rendering normal functional component
+
+----------------------------------------------------------------------------------------------------
+    component composition is component inside another compoent 
+    example
+    import React from 'react';    
+ import ReactDOM from 'react-dom/client';
+
+  //JSX-it is html like syntax 
+  const jsxheading = (<h1 className='head'>sarthak</h1>) ;  //React Element
+const NewHeading = () => (
+ <div>lets hack</div>
+)
+    const HeadingComponent = () => (    //React Functional component
+         <div id="container">
+       <h1>Welcome</h1>
+       <NewHeading />   // component composition
+       </div>
+    );
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<HeadingComponent />);   //rendering normal functional component
+
+------------------------------------------------------------------------------------------ ----------------------------------------------------------------    
+
+
