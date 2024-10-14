@@ -4,8 +4,8 @@
   "description": "react learn",
   "main": "App.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel public/index.html",
+    "build": "parcel public/build index.html"
   },
   "author": "sarthak",
   "license": "ISC",
