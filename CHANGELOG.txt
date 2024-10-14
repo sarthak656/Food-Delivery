@@ -4,4 +4,5 @@
 3)Destructuring on the fly
 4)ConfigDriven UI
 5)key importance
-
+*********************************************************
+6)code optimization

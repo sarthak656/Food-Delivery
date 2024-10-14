@@ -854,11 +854,21 @@ const BodyComponent = () =>{
       }
     ],
    }
+
+const ApiList = resObj.restaurants;
     return (
        <div className="res-container">
-       <RestaurantCard 
-       resobj={ resObj }/>
+         {
+         ApiList.map((item) => {
+            return(
+            <RestaurantCard 
+            resobj={ item }  key={item.info.id} />
+            )
+         }
+         )
+       }
        </div>
     );
   }
+
   export default BodyComponent
