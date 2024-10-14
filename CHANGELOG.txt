@@ -1,11 +1,7 @@
-//  const Search = () => {
-//   return (<div>
-//      {/* <img src={logo} style={{width:"350px",height:"300px"}} alt="logoimg" /> */}
-//      <div>
-//       <form>
-//       <input type="text" name="search" placeholder="Search"  className="search-input"></input>
-//       </form>
-//      </div>
-//   </div>
-//   )
-//  } 
+1)Creating functional component in porper format
+2)passing props
+**********************************************************
+3)Destructuring on the fly
+4)ConfigDriven UI
+5)key importance
+
