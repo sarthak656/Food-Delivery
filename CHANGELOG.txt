@@ -6,3 +6,10 @@
 5)key importance
 *********************************************************
 6)code optimization
+7)destructuring assignment - and optional chaining
+*********************************************************
+8)React file structure
+9)Two types of Import/Export
+* named Import/Export
+*default Import/Export
+

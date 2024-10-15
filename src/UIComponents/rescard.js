@@ -1,4 +1,5 @@
-import React from "react";
+import { CDN_URL } from "../utils/constants";  //named imports
+
 const RestaurantCard = (props) =>{  
   const { resobj } = props; //Destructuring the props(destructuring the objects)
   console.log(resobj); 
@@ -8,7 +9,7 @@ const RestaurantCard = (props) =>{
   const {deliveryTime} = resobj?.info.sla
     return (
       <div className="res-card" >  
-       <img alt="res-logo" className="res-logo" src={'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/' + cloudinaryImageId} />
+       <img alt="res-logo" className="res-logo" src={CDN_URL + cloudinaryImageId} />
        <h2>{name}</h2>
        <h3>{costForTwo}</h3>
        <h3>{avgRating}</h3>

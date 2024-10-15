@@ -6,7 +6,7 @@
 
 6)babel converts JSX code -> React.createElement 
 7)JSX => Babel transpiles it to React.createElement => ReactElement - JS Objct => HTMLElement(render)
-
+console.log(jsxheading);
 8)Babel actually a open source JS compiler
 
 
@@ -21,7 +21,6 @@ a function that retuns piece of jsx is funtional Component.
 
 import React from 'react';    
  import ReactDOM from 'react-dom/client';
-
   //JSX-it is html like syntax 
   const jsxheading = (<h1 className='head'>sarthak</h1>) ;  //React Element
   console.log(jsxheading);
