@@ -83,10 +83,21 @@
   }
  
   .btn-cls{
+    display: flex;
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
+  }
+
+  .btn-cont{
+    display: flex;
+    justify-content: right;
+  }
+
+  .input{
+    padding: 5px;
+    margin: 5px;
   }
  
   
