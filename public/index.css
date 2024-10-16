@@ -82,6 +82,12 @@
     flex-wrap: wrap;
   }
  
+  .btn-cls{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
  
   
  

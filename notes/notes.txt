@@ -57,5 +57,14 @@ const NewHeading = () => (
     root.render(<HeadingComponent />);   //rendering normal functional component
 
 ------------------------------------------------------------------------------------------ ----------------------------------------------------------------    
+Hooks
+most powerful normal utility javascript function to update state
+usestate,useeffect
+reconciliation Algorithm(react fiber) 
+react is good at DOM manipulation
+Virtual DOM is a representation of an Actual DOM ->normal js object
+Actual DOM - eg(<div>many more tags</div>)
+
+---Diff Algorithm->basically finds out the difference between updated virtual DOM and previous virtual DOM
 
 
