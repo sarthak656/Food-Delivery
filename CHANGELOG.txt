@@ -15,8 +15,6 @@
 *********************************************************
 Reack hooks
 1)usestate()
-
-
 Assignments
 ○ Build a AppLayout
 ○ Build a Header Component with Logo & Nav Items & Cart
@@ -36,5 +34,9 @@ operator
 ● Create a Search Box in your App
 ● Use useState to create a variable and bind it to the input box
 ● Try to make your search bar work
+*********************************************************************************
+using fetch method use swiggy api to fetch live data and parse to json and update the UI
+optional chaning - handling the data
+
 
 

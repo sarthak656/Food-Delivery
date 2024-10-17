@@ -44,14 +44,14 @@
     flex-direction: column; /* Stack the items vertically */
     align-items: center; /* Center the content horizontally */
     justify-content: space-between; /* Distribute space evenly */
-    padding: 10px; /* Increased padding for better spacing */
     margin: 10px;
-    width: 200px; /* Fixed width */
+    width: 225px; /* Fixed width */
     height: auto; /* Height will now adjust based on content */
     background-color: #f0f0f0; /* Light grey background */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
-    transition: border 0.3s, box-shadow 0.3s; /* Smooth transition on hover */
+    transition: border 0.3s, box-shadow 0.3s;
+    overflow: hidden;  /* Smooth transition on hover */
   }
   
   .res-card:hover {
@@ -98,6 +98,19 @@
   .input{
     padding: 5px;
     margin: 5px;
+  }
+
+  .Loading{
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+  }
+
+  .nodata{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    font-size: 25px;
   }
  
   

@@ -7,7 +7,7 @@ const RestaurantCard = (props) =>{
   const {deliveryTime} = resobj?.sla
     return (
       <div className="res-card" >  
-       <img alt="res-logo" className="res-logo" src={CDN_URL + cloudinaryImageId} />
+       {/* <img alt="res-logo" className="res-logo" src={CDN_URL + cloudinaryImageId} /> */}
        <h2>{name}</h2>
        <h3>{costForTwo}</h3>
        <h3>{avgRating}</h3>
