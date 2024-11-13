@@ -1,7 +1,7 @@
-import RestaurantCard from '../../src/UIComponents/rescard.js';
+import RestaurantCard from './rescard.js';
 import { useEffect, useState } from 'react';
-import { CircularProgress } from '@mui/material';
-
+import ShimmerUi from './shimmerui.js';
+import searchimg from '../../public/Assets/images/search.svg'
 const BodyComponent = () =>{
 
 const [listRestaurants,setListRestaurants ] = useState([]);
@@ -48,25 +48,19 @@ else{
 }
 
 return (
-   <>
-     {loading ? (
-       <div className='Loading'>
-         <CircularProgress />
-       </div>
-     ) : listRestaurants.length === 0 ? (
-       <div className='nodata'>
-         NO DATA FOUND
-       </div>
-     ) : (
        <>
          {/* Search and filter */}
          <div className='row'>
            <div className='col-lg-6 col-sm-6 col-6'>
+         <div className='input-container'>
+         <img style={{width:'20px',height:'20px'}} src={searchimg} alt="searchimg"/>
              <input 
                className='input' 
                placeholder='Search...' 
                onChange={handleInput}
              />
+               
+                </div>
            </div>
            <div className='col-lg-6 col-sm-6 col-6 btn-cont'>
              <button className='btn-cls' onClick={filter}>
@@ -76,6 +70,15 @@ return (
          </div>
  
          {/* Restaurant list */}
+         {loading ? (
+       <div>
+         <ShimmerUi />
+       </div>
+     ) : listRestaurants.length === 0 ? (
+       <div className='nodata'>
+         NO DATA FOUND
+       </div>
+     ) : (
          <div className="res-container">
            {listRestaurants.map((item) => (
              <RestaurantCard 
@@ -84,7 +87,7 @@ return (
              />
            ))}
          </div>
-       </>
+       
      )}
    </>
  );
