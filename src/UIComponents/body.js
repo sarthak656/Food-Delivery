@@ -19,6 +19,7 @@ const fetchData = async() => {
    const response= await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9141417&lng=74.8559568&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING');
    const data = await response.json();
    setListRestaurants(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);  //optional chaining
+   //The copy variable stores the original, unfiltered dataset. This allows each new search to begin from the full dataset rather than the already filtered results, ensuring that all data is considered for every new search input, even after previous filters have been applied
    setFullList(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
    }
    catch(error){
@@ -38,13 +39,9 @@ const filter = ()=> {
 //search method
 const handleInput= (event) =>{
 const value = event.target.value;
-if(value === ''){
-   setListRestaurants(fulllist);
-}
-else{
    const newFilteredList = fulllist.filter(res => res.info.name.toLowerCase().includes(value.toLowerCase())); 
    setListRestaurants(newFilteredList);
-}
+
 }
 
 return (
