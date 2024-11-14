@@ -1,14 +1,17 @@
-import RestaurantCard from './rescard.js';
+import RestaurantCard from './Rescard.js';
 import { useEffect, useState } from 'react';
-import ShimmerUi from './shimmerui.js';
+import ShimmerUi from './Shimmerui.js';
 import searchimg from '../../public/Assets/images/search.svg'
-const BodyComponent = () =>{
+
+const Body = () =>{
 
 const [listRestaurants,setListRestaurants ] = useState([]);
 const [fulllist,setFullList] = useState([]);
 const [loading,setLoading] = useState(true);
 
-
+//if no dependency array => useEffect is called on every render.
+//if dependency array is empty = [] => useEffect is called on initial render(just once)
+//if dependency array is any variable => useEffect is called everytime when it is updated
 useEffect( () =>{
 fetchData();
 },[]);
@@ -90,4 +93,4 @@ return (
  );
   }
 
-  export default BodyComponent
+  export default Body
