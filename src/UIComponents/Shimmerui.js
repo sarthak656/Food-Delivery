@@ -1,4 +1,4 @@
-const shimmerUi = () =>{
+const Shimmerui = () =>{
     return(
 <div className="shimmer-container">
 <div className="shimmer-cards"></div>
@@ -17,4 +17,4 @@ const shimmerUi = () =>{
     )
 }
 
-export default shimmerUi
+export default Shimmerui

@@ -54,12 +54,16 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
     transition: border 0.3s, box-shadow 0.3s;
     overflow: hidden;  /* Smooth transition on hover */
+    color: black;
   }
   
   .res-card:hover {
-    border: 1px solid black;
+    color:blue;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+   
+  }
+  .no-underline {
+    text-decoration: none;
   }
   
   .res-logo {

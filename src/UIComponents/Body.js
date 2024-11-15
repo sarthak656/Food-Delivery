@@ -1,7 +1,8 @@
 import RestaurantCard from './Rescard.js';
 import { useEffect, useState } from 'react';
-import ShimmerUi from './Shimmerui.js';
+import Shimmerui from './Shimmerui.js';
 import searchimg from '../../public/Assets/images/search.svg'
+import { Link } from 'react-router-dom'
 
 const Body = () =>{
 
@@ -72,7 +73,7 @@ return (
          {/* Restaurant list */}
          {loading ? (
        <div>
-         <ShimmerUi />
+         <Shimmerui />
        </div>
      ) : listRestaurants.length === 0 ? (
        <div className='nodata'>
@@ -81,10 +82,12 @@ return (
      ) : (
          <div className="res-container">
            {listRestaurants.map((item) => (
+            <Link key={item.info.id} className="no-underline"
+            to={"/restaurants/" + item.info.id}> {/** in jsx key should be on the parent jsx that is mapped */}
              <RestaurantCard 
                resobj={item.info} 
-               key={item.info.id} 
              />
+             </Link>
            ))}
          </div>
        

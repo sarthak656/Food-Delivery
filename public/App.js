@@ -8,6 +8,8 @@ import Body from "../src/UIComponents/Body.js";
 import { createBrowserRouter,  RouterProvider} from "react-router-dom";
 import HeaderComponent from '../src/UIComponents/Header.js';
 import { Outlet } from 'react-router-dom';
+import RestaurantCard from "../src/UIComponents/Rescard.js";
+import Restaurants from "../src/UIComponents/Restaurants.js";
 
 const AppLayout = () => {
     return (
@@ -35,6 +37,10 @@ const AppLayout = () => {
             {
                 path: "/about",
                 element: <About />
+            },
+            {
+                path: "/restaurants/:resId",
+                element: <Restaurants />
             }
     ],
     errorElement: <Error />,
