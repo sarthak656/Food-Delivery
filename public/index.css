@@ -1,3 +1,23 @@
+/* login card*/
+.card{
+border: 1px solid black;
+background-color: #f0f0f0;
+width: 400px;
+height: 200px;
+margin-left: 165px;
+margin-top: 50px;
+}
+
+.submit{
+  display: flex;
+  justify-content: center;
+  padding-top: 45px;
+}
+.uname {
+  margin-top: 10px;
+}
+
+
 .bgcolors{
     background-color: aqua;
 }
@@ -56,7 +76,36 @@
     overflow: hidden;  /* Smooth transition on hover */
     color: black;
   }
+
+  .res-container-in {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
+   height: 370px;
+   overflow: auto;
+  }
+  .res-card-in:hover {
+    cursor: pointer;
+  }
+  .res-card-in {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center the content horizontally */
+    justify-content: space-between; /* Distribute space evenly */
+    margin: 10px;
+    height: auto; /* Height will now adjust based on content */
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    transition: border 0.3s, box-shadow 0.3s;
+    overflow: hidden;  /* Smooth transition on hover */
+    color: black;
+  }
   
+  
+
   .res-card:hover {
     color:blue;
     cursor: pointer;
@@ -136,6 +185,9 @@
     margin-top: 18px;
     padding:0 5px;
     height: 30px;
+    color: #f0f0f0;
+    background-color: red;
+    border: 0;
   }
  
 

@@ -1,8 +1,8 @@
 import RestaurantCard from './Rescard.js';
 import { useEffect, useState } from 'react';
 import Shimmerui from './Shimmerui.js';
-import searchimg from '../../public/Assets/images/search.svg'
-import { Link } from 'react-router-dom'
+import searchimg from '../../public/Assets/images/search.svg';
+import { Link } from 'react-router-dom';
 
 const Body = () =>{
 

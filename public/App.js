@@ -10,6 +10,7 @@ import HeaderComponent from '../src/UIComponents/Header.js';
 import { Outlet } from 'react-router-dom';
 import RestaurantCard from "../src/UIComponents/Rescard.js";
 import Restaurants from "../src/UIComponents/Restaurants.js";
+import Login from "../src/UIComponents/Login.js";
 
 const AppLayout = () => {
     return (
@@ -22,9 +23,13 @@ const AppLayout = () => {
 
    const appRouter = createBrowserRouter([
     {
+            path: "/login",
+            element: <Login />
+        
+    },
+    {
         path: "/",
         element: <AppLayout />,
-       
          children: [
             {
                 path: "/",

@@ -40,27 +40,29 @@ const Restaurants = () => {
   return (
     <>
     <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
-      <div style={{ fontSize: '22px' }}>{name}</div>
+      <div style={{ fontSize: '22px',fontWeight:'bold' }}>{name}</div>
       <div>{avgRating}</div>
       <div>{areaName}</div>
       <div>{costForTwoMessage}</div>
       <div>{cuisines?.join(',')}</div>
     </div>
 
-    <div>
-  {itemCards?.map((item) => {
-    const { id, name, category, description } = item?.card?.info || {}; // Destructure safely
-    return (
-      <ul key={id}>
-        {name && <li>{name}</li>}  {/**Short-Circuit Rendering: */}
-        {category && <li>{category}</li>}
-        {description && <li>{description}</li>}
-      </ul>
-    );
-  })}
-</div>
+    <div className='res-container-in'>
+      {itemCards?.map((item) => {
+       const { id, name, category, description } = item?.card?.info || {}; // Destructure safely
+        return (
+        <div key={id} className="res-card-in">
+          <div style={{fontSize:'17px',fontWeight:'bold'}}>{name && <li>{name}</li>}</div> 
+          {/* Short-Circuit Rendering: */}
+          
+          <div>{category && <li>{category}</li>}</div>
+          <div>{description && <li>{description}</li>}</div>
+        </div>
+        );
+      })}
+    </div>
 
-    </>
+  </>
   );
 };
 

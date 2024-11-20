@@ -5,11 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 const HeaderComponent = () =>{
-   const [btnvalue, setBtnvalue] = useState('Login');
-   const [colorflag, setColorFlag] = useState(true);
-   const login = () =>{
-    (btnvalue === 'Login') ? setBtnvalue('Logout') : setBtnvalue('Login')
-   }
 
     return (
     <div className="header">
@@ -31,8 +26,9 @@ const HeaderComponent = () =>{
                Contact Us
                </Link>
                </li>
-             <li>Cart</li>
-             <button className="lgnbtn" style={{backgroundColor: (btnvalue === 'Login')? 'green' : 'red'}} onClick={login}>{btnvalue}</button>
+             <Link to='/login'>
+             <button className="lgnbtn">Logout</button>
+             </Link>
           </ul>
        </div>
     </div>
