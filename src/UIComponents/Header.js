@@ -28,9 +28,14 @@ const onlinestatus = useOnlineStatus();
                Contact Us
                </Link>
                </li>
+               <li>
+                  <Link to="/grocery">Grocery</Link>
+               </li>
+               <li>
              <Link to='/login'>
              <button className="lgnbtn">Logout</button>
              </Link>
+             </li>
           </ul>
        </div>
     </div>
