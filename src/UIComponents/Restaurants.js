@@ -1,35 +1,21 @@
-import { RES_URL } from '.././utils/constants';
-import { useState, useEffect} from 'react';
 import Shimmerui from './Shimmerui';
 import { useParams } from 'react-router-dom';
+import useRestaurantsMenu from '../utils/useRestaurantsMenu';
 
 const Restaurants = () => {
-  const [resinfo, setResinfo] = useState(null);
   const {resId} = useParams(); //is a hook for accessing route parameters such as ID or slug from the URL.
+  const resInfo = useRestaurantsMenu(resId) // custom hook
   let itemCards;
-
-  useEffect(() => {
-    fetchData();
-  }, [resId]);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(RES_URL+resId);
-      const json = await response.json();
-      setResinfo(json.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+ 
+ 
   // If data is still loading, show Shimmerui
-  if (resinfo === null) {
+  if (resInfo === null) {
     return <Shimmerui />;
   }
 
-  // Destructuring resinfo once it's available
-  const { name, areaName, avgRating, costForTwoMessage, cuisines } = resinfo?.cards[2]?.card?.card?.info;
-  const cardData = resinfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]?.card?.card;
+  // Destructuring resInfo once it's available
+  const { name, areaName, avgRating, costForTwoMessage, cuisines } = resInfo?.cards[2]?.card?.card?.info;
+  const cardData = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[3]?.card?.card;
 
   if (cardData?.itemCards) {
   itemCards = cardData.itemCards;

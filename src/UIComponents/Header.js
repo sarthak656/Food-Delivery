@@ -2,10 +2,11 @@
 import foodLogo from "../../public/Assets/images/Food_Deliver.png";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const HeaderComponent = () =>{
-
+const onlinestatus = useOnlineStatus();
     return (
     <div className="header">
        <div className="img-container">
@@ -13,6 +14,7 @@ const HeaderComponent = () =>{
        </div>
        <div className="nav-container">
           <ul>
+            <li>Online status {onlinestatus ? "🟢" : "🔴"}</li>
              <li>
                <Link to="/">
                Home
