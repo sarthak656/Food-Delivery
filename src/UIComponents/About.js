@@ -1,6 +1,7 @@
+import User from './Userclass.js'
 const About = () =>{
     return(
-        <h1>About</h1>
+     <User name={'sarthak'} location={'Mangalore'} />
     )
 }
 
