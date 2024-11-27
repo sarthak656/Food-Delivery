@@ -12,7 +12,7 @@ const Login = () => {
         <>
         <div className=' grid grid-cols-12'>
         <div className='col-span-6'>
-        {/* <img className=" mt-14 ml-14" src={foodLogo} /> */}
+        <img className=" mt-14 ml-14" src={foodLogo} />
         </div>
         <div className='col-span-6 mt-10 ml-56 border-4 w-[360px] rounded-lg shadow-xl'>
             <div className='ml-32 font-serif text-2xl text-blue-700'>Foodie 🍔</div>
