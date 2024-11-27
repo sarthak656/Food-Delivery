@@ -1,18 +1,20 @@
-import { CDN_URL } from "../utils/constants";  //named imports
+
+import { CDN_URL1 } from "../utils/constants"; 
 
 const RestaurantCard = (props) =>{  
   const { resobj } = props; //Destructuring the props(destructuring the objects)
   //destructuring assignment - and used optional chaining(?. which checks helps prevent runtime errors that can occur when trying to access properties on null or undefined)
   const {cloudinaryImageId,name,costForTwo,avgRating,cuisines} = resobj
   const {deliveryTime} = resobj?.sla
+  
     return (
-      <div className="res-card" >  
-       {/* <img alt="res-logo" className="res-logo" src={CDN_URL + cloudinaryImageId} /> */}
-       <h2>{name}</h2>
-       <h3>{costForTwo}</h3>
-       <h3>{avgRating}</h3>
-       <h4>{deliveryTime}Minutes</h4>
-       <h4>{cuisines}</h4> 
+      <div className="m-2 p-2 w-[250px] h-60  rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 truncate ">  
+       <img alt="res-logo" className="w-32 h-32 rounded-lg flex justify-center" src={CDN_URL1 + cloudinaryImageId} />
+       <h2 className="font-bold text-lg truncate">{name}</h2>
+       {/* <h3 className="truncate ">{costForTwo}</h3> */}
+       <h3 className="truncate">{avgRating}⭐ </h3>
+       <h4 className="truncate font-extrabold">{deliveryTime}Minutes</h4>
+       <h4 className="truncate text-gray-500">{cuisines.join(',')}</h4> 
      </div>
       );
     }

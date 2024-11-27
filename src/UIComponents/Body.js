@@ -6,47 +6,44 @@ import useRescard from '../utils/useRescard'
 import useOnlineStatus from '../utils/useOnlineStatus.js';
 
 const Body = () =>{
-  
 const { listRestaurants, loading, filter, handleInput } = useRescard(); //custom hook
 const isOnline = useOnlineStatus(); //custom hook
-if(isOnline === false) return <h1>You are offline,please check you network</h1>
+if(isOnline === false) return <h1 className='flex justify-center my-24 font-extrabold text-2xl'>You are offline,please check you network 😕</h1>
 
 return (
        <>
          {/* Search and filter */}
          <div className='row'>
-           <div className='col-lg-6 col-sm-6 col-6'>
-         <div className='input-container'>
-         <img style={{width:'20px',height:'20px'}} src={searchimg} alt="searchimg"/>
-             <input 
-               className='input' 
+
+            <div className='col-lg-3 col-sm-6 col-6 mt-2 p-2 ml-6  border flex flex-wrap'>
+             <img  className='w-5 h-5 mr-2' src={searchimg} alt="searchimg"/>
+             <input  
                placeholder='Search...' 
-               onChange={handleInput}
-             />
-               
-                </div>
-           </div>
-           <div className='col-lg-6 col-sm-6 col-6 btn-cont'>
-             <button className='btn-cls' onClick={filter}>
-               Top Rating Filter
+               onChange={handleInput} className='outline-none text-gray-700' /> 
+            </div>
+          
+           <div className='col-lg-6 col-sm-6 col-6 flex items-center'>
+             <button className='py-1 px-1 rounded-lg text-white my-2 border bg-green-500' onClick={filter}>
+               Top Rated 🌟
              </button>
            </div>
+
          </div>
  
 
          {/* Restaurant list */}
          {loading ? (
        <div>
-         <Shimmerui />
+         <Shimmerui bodyFlag={true} />
        </div>
      ) : listRestaurants.length === 0 ? (
-       <div className='nodata'>
-         NO DATA FOUND
+       <div className=' flex justify-center my-24'>
+         No Restaurant Found 😕
        </div>
      ) : (
-         <div className="res-container">
+         <div className='flex flex-wrap justify-center'>
            {listRestaurants.map((item) => (
-            <Link key={item.info.id} className="no-underline"
+            <Link key={item.info.id} className="no-underline "
             to={"/restaurants/" + item.info.id}> {/** in jsx key should be on the parent jsx that is mapped */}
              <RestaurantCard 
                resobj={item.info} 
