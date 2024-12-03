@@ -1,5 +1,3 @@
-
-import { fontSize } from "@mui/system";
 import { CDN_URL1 } from "../utils/constants"; 
 
 const RestaurantCard = (props) =>{  

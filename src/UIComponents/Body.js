@@ -45,7 +45,7 @@ return (
          <div className='flex flex-wrap justify-center'>
            {listRestaurants.map((item) => (
             <Link key={item.info.id} className="no-underline "
-            to={"/restaurants/" + item.info.id}> {/** in jsx key should be on the parent jsx that is mapped */}
+            to={"restaurants/" + item.info.id}> {/** in jsx key should be on the parent jsx that is mapped */}
             {(item.info.sla.lastMileTravel < 4) ? <Restaurantpromoted  resobj={item.info} /> :
              <RestaurantCard 
                resobj={item.info} 
