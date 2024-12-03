@@ -1,4 +1,4 @@
-import RestaurantCard from './Rescard.js';
+import RestaurantCard, { withPropmotedLabel } from './Rescard.js';
 import Shimmerui from './Shimmerui.js';
 import searchimg from '../../public/Assets/images/search.svg';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import useOnlineStatus from '../utils/useOnlineStatus.js';
 const Body = () =>{
 const { listRestaurants, loading, filter, handleInput } = useRescard(); //custom hook
 const isOnline = useOnlineStatus(); //custom hook
+const Restaurantpromoted = withPropmotedLabel(RestaurantCard)
 if(isOnline === false) return <h1 className='flex justify-center my-24 font-extrabold text-2xl'>You are offline,please check you network 😕</h1>
 
 return (
@@ -45,9 +46,10 @@ return (
            {listRestaurants.map((item) => (
             <Link key={item.info.id} className="no-underline "
             to={"/restaurants/" + item.info.id}> {/** in jsx key should be on the parent jsx that is mapped */}
+            {(item.info.sla.lastMileTravel < 4) ? <Restaurantpromoted  resobj={item.info} /> :
              <RestaurantCard 
                resobj={item.info} 
-             />
+             />}
              </Link>
            ))}
          </div>
