@@ -15,7 +15,7 @@ const { itemCardsInfo } = props
                   <div className='text-gray-500'>{itemCardsInfo?.description && <li>{itemCardsInfo?.description}</li>}</div>
                 </div>
                 <div className='col-span-1'>
-                  {itemCardsInfo?.imageId ? <img alt='img' className='w-24 h-24 m-4' src={IMG_URL + itemCardsInfo?.imageId} /> : null}
+                  {itemCardsInfo?.imageId ? <img alt='img' className='w-24 h-24 m-4 border rounded-xl' src={IMG_URL + itemCardsInfo?.imageId} /> : null}
                 </div>
               </div>
 
