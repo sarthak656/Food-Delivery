@@ -22,8 +22,8 @@ const RestaurantCard = (props) =>{
 export const withPropmotedLabel = (RestaurantCard) => {
   return (props)=>{
    return(
-    <div className="relative">
-    <label className='text-sm absolute ml-4 border bg-green-500 text-white p-1'>One Free Delivery</label>
+    <div >
+    <label className='text-sm absolute ml-4 border bg-green-500 text-white p-1 font-bold'>One Free Delivery</label>
     <RestaurantCard {...props}/>
     </div>
    )
