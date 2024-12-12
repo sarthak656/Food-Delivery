@@ -8,7 +8,7 @@ const ItemCards = (props) => {
     // const [show,setShow] = useState();
     const ItemCards = card.itemCards;
     const handleItemClick = () => {
-      setShowind();
+      setShowind();    
       //console.log(showItems)
      
       // setAccord(!accord);   //uncontrolled components
