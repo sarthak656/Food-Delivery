@@ -1,11 +1,13 @@
 import Shimmerui from './Shimmerui';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import useRestaurantsMenu from '../utils/useRestaurantsMenu';
 import ItemCards from './ItemCards';
 
 const Fooditem = () => {
   const {resId} = useParams(); //is a hook for accessing route parameters such as ID or slug from the URL.
   const resInfo = useRestaurantsMenu(resId) // custom hook
+  const [ showIndex,setShowindex ] = useState(null);
   let itemCards;
   const fooditemFlag = true;
  
@@ -50,10 +52,20 @@ const Fooditem = () => {
       </div>
     </div>
     {
-      itemCategory.map((item) =>(
+      itemCategory.map((item,index) =>(
          newitems = item?.card,
          <div key={item?.card?.card.title}>
-        <ItemCards items={newitems}/>
+        <ItemCards 
+        items={newitems}
+        showItems={
+        (index === showIndex) ?  true : false
+        } 
+        setShowind={() => {
+          setShowindex((prevIndex) => {         
+            return (prevIndex === index ? null : index)});
+        }}
+
+          />   {/*due to  showItems it controls ItemCard so Fooditem component is controlled component**/}
         </div>
       )
         )

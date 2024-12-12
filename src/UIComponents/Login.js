@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect,useRef } from 'react';
 import { Formik ,Form ,Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import foodLogo from "../../public/Assets/images/Food_Deliver.png";
@@ -6,14 +6,21 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
+    const usernameRef = useRef();
+
+    useEffect(() => {
+        if (usernameRef.current) {
+          usernameRef.current.focus();
+        }
+      }, []);
 
     return(
-        <>
+        <div >
         <div className=' grid grid-cols-12'>
         <div className='col-span-6'>
         <img className=" mt-14 ml-14" src={foodLogo} />
         </div>
-        <div className='col-span-6 mt-10 ml-56 border-4 w-[360px] rounded-lg shadow-xl'>
+        <div className='col-span-6 mt-10 ml-56 border-4 w-[360px] rounded-lg shadow-xl bg-blue-50'>
             <div className='ml-32 font-serif text-2xl text-blue-700'>Foodie 🍔</div>
             <div className='ml-32 font-serif text-xs text-blue-700'>Login to Continue</div>
         <Formik 
@@ -38,7 +45,7 @@ const Login = () => {
             <label htmlFor='username'>Username</label>
             </div>
        
-            <Field name='username' className='border-2 rounded-lg ml-2'></Field>
+            <Field name='username' className='border-2 rounded-sm ml-2 pl-1'  innerRef={usernameRef}></Field>
             
             <div className='ml-2 text-red-400'>
             <ErrorMessage name='username'></ErrorMessage>
@@ -49,7 +56,7 @@ const Login = () => {
         <div className='p-2 font-sans'>
             <label htmlFor='password'>Password</label>
             </div>
-            <Field name='password' type="password" className='border-2 rounded-lg ml-2 ' autoComplete="off"></Field>
+            <Field name='password' type="password" className='border-2 rounded-sm ml-2 pl-1' autoComplete="off"></Field>
             <div className='ml-2 text-red-400'>
             <ErrorMessage name='password'></ErrorMessage>
             </div>
@@ -63,7 +70,7 @@ const Login = () => {
       
        </div>
         <div className='flex justify-center mt-64 text-blue-600'>Version 1.0.0</div>
-        </>
+        </div>
     )
 }
 
